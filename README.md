@@ -3,7 +3,8 @@
 *History (Created): 2024-07-29 12:37*
 
 ## The RTMaps Diagram
-![]([F:\Seeing Machines Test-track Development\4.Test track Diagrams\Seein Machine Test-track Study 1 Screenshot.png](https://github.com/yyt1208732230/SM2024_RTMaps_Datacollection/blob/main/4.Test%20track%20Diagrams/Seein%20Machine%20Test-track%20Study%201%20Screenshot.png))
+
+![RTMaps Diagram](https://github.com/yyt1208732230/SM2024_RTMaps_Datacollection/blob/main/4.Test%20track%20Diagrams/Seein%20Machine%20Test-track%20Study%201%20Screenshot.png)
 
 This diagram includes data collection for a Bluetooth IMU, a Logitech presenter (left & right arrow listener), and an ECG/EDA Biopac physiological data collection system.
 
@@ -12,7 +13,7 @@ This diagram includes data collection for a Bluetooth IMU, a Logitech presenter 
 - **Receiver**: Data receiver components.
 - **Decoders**: Data decoder components.
 - **Monitors & Debuggers**: Development environment components for real-time visualization of monitoring data quality and their sample rates. Please disable these during the final data collection.
-- **Recorders**: File recording for piloting studies and testing. Disable them and only record .rec files for final data collection.
+- **Recorders**: File recording for piloting studies and testing. Disable them and only record .rec .idx .idy files for final data collection.
 
 ## The Environment Set-up in the Automated Vehicle with RTMaps
 
