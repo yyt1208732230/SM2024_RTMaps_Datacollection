@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ComponentResources xmlns="http://schemas.intempora.com/RTMaps/2011/ComponentResources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="" xsi:noNamespaceSchemaLocation="http://www.intempora.com/schemas/RTMaps/2011/ComponentResources.xsd">
+<Type>Component</Type>
+<IconFile/>
+<TargetOS>Windows</TargetOS>
+<Lang lang="ENG">
+<GroupName/>
+<Documentation>
+<Component>
+<Alias>Biopac MP150/MP160</Alias>
+<Description>
+<span><![CDATA[<p>This component interfaces the Biopac MP150 &amp; MP160 sensors thanks to the Biopac Hardware API v2.2.1. The device should be on the same network as the current computer. 
+
+</p>
+
+<p>
+
+This component has one output that emits the interleaved data samples. This allows you to record all data with only one connection to a Recorder. Data can be deinterleaved by connecting this output to the Biopac deinterleaver component. Please refer to the documentation for the Biopac deinterleaver component.
+
+</p>
+
+<p>
+
+Please configure the component properties as explained below (Module Details | Properties). At least the following properties should be configured: Device sample rate, Active digital channels, Active analog channels.
+
+</p>]]></span>
+</Description>
+</Component>
+<Property MAPSName="serial_number">
+<Alias>Serial number</Alias>
+<Description>
+<span><![CDATA[Serial number of the MP150 or MP160.  "AUTO" or "auto" can be used to automatically connect to the first device to respond on the network.]]></span>
+</Description>
+</Property>
+<Property MAPSName="device_type">
+<Alias>Device type</Alias>
+<Description>
+<span><![CDATA[Choose between MP150 &amp; MP160.]]></span>
+</Description>
+</Property>
+<Property MAPSName="device_sample_rate">
+<Alias>Device sample rate</Alias>
+<Description>
+<span><![CDATA[MP150/MP160 acquisition sample rate in Hertz.]]></span>
+</Description>
+</Property>
+<Property MAPSName="component_output_rate">
+<Alias>Component output rate</Alias>
+<Description>
+<span><![CDATA[Output rate of the RTMaps component. If smaller than device sample rate, every RTMaps output element will contain multiple samples for each acquired channel (see output documentation for details about the data layout). Component output rate will be adjusted so that an RTMaps output element contains a constant (and integral) number of samples for each acquired channel. This number is reported in the "Samples per emission" property. Component output rate cannot be greater than device sample rate.
+
+A higher output rate means the downstream data processing can be more reactive, but increases the CPU load (especially above 500 Hertz).]]></span>
+</Description>
+</Property>
+<Property MAPSName="samples_per_emission">
+<Alias>Samples per emission</Alias>
+<Description>
+<span><![CDATA[This read-only property gives the number of data samples per channel in every RTMaps output element. Equals (Device sample rate / Component output rate) after the latter has been adjusted.]]></span>
+</Description>
+</Property>
+<Property MAPSName="active_digital_channels">
+<Alias>Active digital channels</Alias>
+<Description>
+<span><![CDATA[Digital channels to acquire data from. Choose individual indexes with ; separator and index ranges with - separator. Ex: 2;1;5-8;2 for elements 1,2,5,6,7,8. Valid indexes: 1 to 16. Leave blank to not acquire from digital channels.]]></span>
+</Description>
+</Property>
+<Property MAPSName="active_analog_channels">
+<Alias>Active analog channels</Alias>
+<Description>
+<span><![CDATA[Analog channels to acquire data from. Choose individual indexes with ; separator and index ranges with - separator. Ex: 2;1;5-8;2 for elements 1,2,5,6,7,8. Valid indexes: 1 to 16. Leave blank to not acquire from analog channels.]]></span>
+</Description>
+</Property>
+<Property MAPSName="number_of_channels">
+<Alias>Number of channels</Alias>
+<Description>
+<span><![CDATA[This read-only property indicates the total number of channels selected for acquisition. The Biopac deinterleaver's "Number of outputs" property  should match this property.]]></span>
+</Description>
+</Property>
+<Property MAPSName="presets_file">
+<Alias>Presets XML file</Alias>
+<Description>
+<span><![CDATA[Scaling of analog channels can be set according to a channel presets XML file in the following way:
+
+<ul>
+
+<li>Enter the path to an XML preset file in this property (or click on the button on the right of the property to open a browser). A sample preset file is available in the BHAPI installation folder.
+
+</li> <li>For each analog channel X you specified through the "Active analog channel" property, a  "preset_uid_for_analog_channel_X" property will be created. Enter the UID of the preset you want to use for this particular channel. The presets file can be easily examined by opening it with a Web Browser.
+
+</li> </ul>]]></span>
+</Description>
+</Property>
+<Property MAPSName="preset_uid_for_analog_channel_X">
+<Alias>Preset UID for analog channel X</Alias>
+<Description>
+<span><![CDATA[Set the UID of the XML preset you want to use as scaling for analog channel X. One such property will be created for each active analog channel.]]></span>
+</Description>
+</Property>
+<Output MAPSName="interleavedData">
+<Alias>interleavedData</Alias>
+<Description>
+<span><![CDATA[Interleaved data samples. Supposing the device is set to acquire Analog channels  1 and 5, Digital channels 3, 4 and 10, and supposing samples_per_emission > 1, data will be interleaved as follows:
+
+Analog 1 Sample 1, Analog 5 Sample 1, Digital 3 Sample 1, Digital 4 Sample 1, Digital 10 Sample 1, Analog 1 Sample 2, Analog 5 Sample 2, Digital 3 Sample 2, Digital 4 Sample 2, Digital 10 Sample 2, etc.]]></span>
+</Description>
+</Output>
+</Documentation>
+</Lang>
+</ComponentResources>

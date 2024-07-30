@@ -1,0 +1,5 @@
+1. Anaconda3-2024.06-1-Windows-x86_64.exe (too big to upload in Github)
+2. mosquito
+3. mqttbox
+4. RTMaps 4.9.0
+5. AcqKnowledge

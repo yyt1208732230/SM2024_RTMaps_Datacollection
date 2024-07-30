@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RTMapsDiagram version="4.8.0" EngineVersion="4.9" xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd">
+  <RequiredPackages>
+    <File Version="1.3.1"><![CDATA[C:/Program Files/Intempora/RTMaps 4/packages/rtmaps_biopac/rtmaps_biopac.pck]]><Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_biopac/rtmaps_biopac.pck]]></Relative></File>
+    <File Version="1.0"><![CDATA[C:/Program Files/Intempora/RTMaps 4/packages/rtmaps_mqtt/MQTT.pck]]><Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_mqtt/MQTT.pck]]></Relative></File>
+  </RequiredPackages>
+  <EngineProperties>
+    <Property LongName="Engine.startTimespeed" Type="1">1000</Property>
+    <Property LongName="Engine.startTime" Type="1">0</Property>
+    <Property LongName="Engine.session" Type="3"><![CDATA[unspecified]]></Property>
+    <Property LongName="Engine.recordingAtStart" Type="0">true</Property>
+    <Property LongName="Engine.recording" Type="0">true</Property>
+    <Property LongName="Engine.sequentialStart" Type="0">false</Property>
+    <Property LongName="Engine.shutdownTimeout" Type="1">10000000</Property>
+    <Property LongName="Engine.autoDetectStartTime" Type="0">true</Property>
+    <Property LongName="Engine.coreFunctionsToSaveInDiag" Type="4"><![CDATA[0|-1]]></Property>
+    <Property LongName="Engine.useUTCTimeReference" Type="0">false</Property>
+    <Property LongName="Engine.fastForwardThreshold" Type="1">2000</Property>
+    <Property LongName="Engine.fastRewindThreshold" Type="1">-2000</Property>
+    <Property LongName="Engine.priorityClass" Type="4"><![CDATA[3|0|Shared Time|Preemptive|Auto]]></Property>
+    <Property LongName="Engine.posixTimerThread" Type="4"><![CDATA[3|0|Auto|Timer Interval|Real Time Clock]]></Property>
+    <Property LongName="Engine.posixRealTimeClockIrqFrequency" Type="4"><![CDATA[4|0|1024|2048|4096|8192]]></Property>
+    <Property LongName="Engine.posixPreemptiveSchedulingPolicy" Type="4"><![CDATA[2|0|FIFO|Round Robin]]></Property>
+    <Property LongName="Engine.windowsUsePerformanceCounter" Type="0">true</Property>
+  </EngineProperties>
+  <ClocksManagement>
+    <Property LongName="ClocksManagement.activeClock" Type="4"><![CDATA[1|0|RTMaps_standard_clock]]></Property>
+  </ClocksManagement>
+  <Component InstanceName="Biopac_deinterleaver_1" Model="Biopac_deinterleaver" Version="1.1.0" x="344" y="400" z="0">
+    <Input LongName="Biopac_deinterleaver_1.interleavedData" Name="interleavedData">
+      <Property LongName="Biopac_deinterleaver_1.interleavedData.readerType" Type="1">0</Property>
+      <Property LongName="Biopac_deinterleaver_1.interleavedData.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="Biopac_deinterleaver_1.ECG" Name="ECG">
+      <Property LongName="Biopac_deinterleaver_1.ECG.subsampling" Type="1">1</Property>
+      <Property LongName="Biopac_deinterleaver_1.ECG.fifosize" Type="1">16</Property>
+      <Property LongName="Biopac_deinterleaver_1.ECG.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Biopac_deinterleaver_1.EDA" Name="EDA">
+      <Property LongName="Biopac_deinterleaver_1.EDA.subsampling" Type="1">1</Property>
+      <Property LongName="Biopac_deinterleaver_1.EDA.fifosize" Type="1">16</Property>
+      <Property LongName="Biopac_deinterleaver_1.EDA.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="Biopac_deinterleaver_1.number_of_channels" Type="1">2</Property>
+    <Property LongName="Biopac_deinterleaver_1.output_0_name" Type="3"><![CDATA[ECG]]></Property>
+    <Property LongName="Biopac_deinterleaver_1.output_1_name" Type="3"><![CDATA[EDA]]></Property>
+    <Property LongName="Biopac_deinterleaver_1.threaded" Type="0">true</Property>
+    <Property LongName="Biopac_deinterleaver_1.priority" Type="1">128</Property>
+    <Property LongName="Biopac_deinterleaver_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="DataViewer_imu_clicker" Model="DataViewer" Version="2.0.10" x="800" y="248" z="0">
+    <Input LongName="DataViewer_imu_clicker.input_0" Name="input_0">
+      <Property LongName="DataViewer_imu_clicker.input_0.readerType" Type="1">4</Property>
+      <Property LongName="DataViewer_imu_clicker.input_0.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="DataViewer_imu_clicker.input_1" Name="input_1">
+      <Property LongName="DataViewer_imu_clicker.input_1.readerType" Type="1">4</Property>
+      <Property LongName="DataViewer_imu_clicker.input_1.subsampling" Type="1">1</Property>
+    </Input>
+    <Property LongName="DataViewer_imu_clicker.begin_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="DataViewer_imu_clicker.widget_begin_config" Type="3" SubType="256"><![CDATA[General Configuration]]></ReadOnlyProperty>
+    <Property LongName="DataViewer_imu_clicker.autoDirty" Type="0">true</Property>
+    <Property LongName="DataViewer_imu_clicker.run" Type="0">true</Property>
+    <Property LongName="DataViewer_imu_clicker.alwaysOnTop" Type="4"><![CDATA[4|0|Only at run time|Only at design time|No|Both at run time and design time]]></Property>
+    <Property LongName="DataViewer_imu_clicker.moveable" Type="0">true</Property>
+    <Property LongName="DataViewer_imu_clicker.hidden" Type="0">false</Property>
+    <Property LongName="DataViewer_imu_clicker.title" Type="3"><![CDATA[]]></Property>
+    <Property LongName="DataViewer_imu_clicker.x" Type="1">782</Property>
+    <Property LongName="DataViewer_imu_clicker.y" Type="1">358</Property>
+    <Property LongName="DataViewer_imu_clicker.width" Type="1">530</Property>
+    <Property LongName="DataViewer_imu_clicker.height" Type="1">420</Property>
+    <Property LongName="DataViewer_imu_clicker.end_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="DataViewer_imu_clicker.widget_end_config" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="DataViewer_imu_clicker.specific_begin_config" Type="3" SubType="256"><![CDATA[Specific Configuration]]></ReadOnlyProperty>
+    <Property LongName="DataViewer_imu_clicker.nbInputs" Type="1">2</Property>
+    <Property LongName="DataViewer_imu_clicker.compactMode" Type="0">false</Property>
+    <Property LongName="DataViewer_imu_clicker.showInfo" Type="0">true</Property>
+    <Property LongName="DataViewer_imu_clicker.showData" Type="0">true</Property>
+    <Property LongName="DataViewer_imu_clicker.showPrettyTimestamp" Type="0">true</Property>
+    <Property LongName="DataViewer_imu_clicker.float32Format" Type="3"><![CDATA[%9g]]></Property>
+    <Property LongName="DataViewer_imu_clicker.float64Format" Type="3"><![CDATA[%9g]]></Property>
+    <Property LongName="DataViewer_imu_clicker.integer8Format" Type="3"><![CDATA[%d]]></Property>
+    <Property LongName="DataViewer_imu_clicker.integer16Format" Type="3"><![CDATA[%d]]></Property>
+    <Property LongName="DataViewer_imu_clicker.integer32Format" Type="3"><![CDATA[%I32d]]></Property>
+    <Property LongName="DataViewer_imu_clicker.integer64Format" Type="3"><![CDATA[%I64d]]></Property>
+    <Property LongName="DataViewer_imu_clicker.unsignedInteger8Format" Type="3"><![CDATA[%u]]></Property>
+    <Property LongName="DataViewer_imu_clicker.unsignedInteger16Format" Type="3"><![CDATA[%u]]></Property>
+    <Property LongName="DataViewer_imu_clicker.unsignedInteger32Format" Type="3"><![CDATA[%I32u]]></Property>
+    <Property LongName="DataViewer_imu_clicker.unsignedInteger64Format" Type="3"><![CDATA[%I64u]]></Property>
+    <Property LongName="DataViewer_imu_clicker.hexDisplay" Type="0">false</Property>
+    <Property LongName="DataViewer_imu_clicker.internalState" Type="3" SubType="128"><![CDATA[238;265]]></Property>
+    <Property LongName="DataViewer_imu_clicker.expandedState" Type="3" SubType="128"><![CDATA[1|MQTTReceiver_IMU_head.imudata_Text;1|Info:MQTTReceiver_IMU_head.imudata_Text;0|Data:MQTTReceiver_IMU_head.imudata_Text;1|MQTTReceiver_Clicker.clickerdata_Text;0|Info:MQTTReceiver_Clicker.clickerdata_Text;1|Data:MQTTReceiver_Clicker.clickerdata_Text]]></Property>
+    <ReadOnlyProperty LongName="DataViewer_imu_clicker.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="DataViewer_imu_clicker.threaded" Type="0">true</Property>
+    <Property LongName="DataViewer_imu_clicker.priority" Type="1">128</Property>
+    <Property LongName="DataViewer_imu_clicker.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="MQTTReceiver_Clicker" Model="MQTTReceiver" Version="1.0" x="112" y="248" z="0">
+    <Output LongName="MQTTReceiver_Clicker.connectionStatus" Name="connectionStatus">
+      <Property LongName="MQTTReceiver_Clicker.connectionStatus.subsampling" Type="1">1</Property>
+      <Property LongName="MQTTReceiver_Clicker.connectionStatus.fifosize" Type="1">16</Property>
+      <Property LongName="MQTTReceiver_Clicker.connectionStatus.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="MQTTReceiver_Clicker.clickerdata_Text" Name="clickerdata_Text">
+      <Property LongName="MQTTReceiver_Clicker.clickerdata_Text.subsampling" Type="1">1</Property>
+      <Property LongName="MQTTReceiver_Clicker.clickerdata_Text.fifosize" Type="1">16</Property>
+      <Property LongName="MQTTReceiver_Clicker.clickerdata_Text.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="MQTTReceiver_Clicker.clickerdata_Integer32" Name="clickerdata_Integer32">
+      <Property LongName="MQTTReceiver_Clicker.clickerdata_Integer32.subsampling" Type="1">1</Property>
+      <Property LongName="MQTTReceiver_Clicker.clickerdata_Integer32.fifosize" Type="1">16</Property>
+      <Property LongName="MQTTReceiver_Clicker.clickerdata_Integer32.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="MQTTReceiver_Clicker.clickerdata_Float64" Name="clickerdata_Float64">
+      <Property LongName="MQTTReceiver_Clicker.clickerdata_Float64.subsampling" Type="1">1</Property>
+      <Property LongName="MQTTReceiver_Clicker.clickerdata_Float64.fifosize" Type="1">16</Property>
+      <Property LongName="MQTTReceiver_Clicker.clickerdata_Float64.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="MQTTReceiver_Clicker.OutputName" Type="3"><![CDATA[clickerdata]]></Property>
+    <Property LongName="MQTTReceiver_Clicker.Address" Type="3"><![CDATA[localhost:1883]]></Property>
+    <Property LongName="MQTTReceiver_Clicker.ClientId" Type="3"><![CDATA[mqtt_receiver_2]]></Property>
+    <Property LongName="MQTTReceiver_Clicker.Topic" Type="3"><![CDATA[clicker/all]]></Property>
+    <Property LongName="MQTTReceiver_Clicker.Qos" Type="1">0</Property>
+    <Property LongName="MQTTReceiver_Clicker.KeepAliveInterval_sec" Type="1">140000</Property>
+    <Property LongName="MQTTReceiver_Clicker.cleanSession" Type="0">true</Property>
+    <Property LongName="MQTTReceiver_Clicker.ConnectTimeout_sec" Type="1">2</Property>
+    <Property LongName="MQTTReceiver_Clicker.RetryInterval_sec" Type="1">1</Property>
+    <Property LongName="MQTTReceiver_Clicker.verbose" Type="0">false</Property>
+    <Property LongName="MQTTReceiver_Clicker.threaded" Type="0">true</Property>
+    <Property LongName="MQTTReceiver_Clicker.priority" Type="1">128</Property>
+    <Property LongName="MQTTReceiver_Clicker.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="MQTTReceiver_IMU_head" Model="MQTTReceiver" Version="1.0" x="112" y="96" z="0">
+    <Output LongName="MQTTReceiver_IMU_head.connectionStatus" Name="connectionStatus">
+      <Property LongName="MQTTReceiver_IMU_head.connectionStatus.subsampling" Type="1">1</Property>
+      <Property LongName="MQTTReceiver_IMU_head.connectionStatus.fifosize" Type="1">16</Property>
+      <Property LongName="MQTTReceiver_IMU_head.connectionStatus.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="MQTTReceiver_IMU_head.imudata_Text" Name="imudata_Text">
+      <Property LongName="MQTTReceiver_IMU_head.imudata_Text.subsampling" Type="1">1</Property>
+      <Property LongName="MQTTReceiver_IMU_head.imudata_Text.fifosize" Type="1">16</Property>
+      <Property LongName="MQTTReceiver_IMU_head.imudata_Text.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="MQTTReceiver_IMU_head.imudata_Integer32" Name="imudata_Integer32">
+      <Property LongName="MQTTReceiver_IMU_head.imudata_Integer32.subsampling" Type="1">1</Property>
+      <Property LongName="MQTTReceiver_IMU_head.imudata_Integer32.fifosize" Type="1">16</Property>
+      <Property LongName="MQTTReceiver_IMU_head.imudata_Integer32.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="MQTTReceiver_IMU_head.imudata_Float64" Name="imudata_Float64">
+      <Property LongName="MQTTReceiver_IMU_head.imudata_Float64.subsampling" Type="1">1</Property>
+      <Property LongName="MQTTReceiver_IMU_head.imudata_Float64.fifosize" Type="1">16</Property>
+      <Property LongName="MQTTReceiver_IMU_head.imudata_Float64.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="MQTTReceiver_IMU_head.OutputName" Type="3"><![CDATA[imudata]]></Property>
+    <Property LongName="MQTTReceiver_IMU_head.Address" Type="3"><![CDATA[localhost:1883]]></Property>
+    <Property LongName="MQTTReceiver_IMU_head.ClientId" Type="3"><![CDATA[mqtt_receiver_1]]></Property>
+    <Property LongName="MQTTReceiver_IMU_head.Topic" Type="3"><![CDATA[imu/wit/all]]></Property>
+    <Property LongName="MQTTReceiver_IMU_head.Qos" Type="1">0</Property>
+    <Property LongName="MQTTReceiver_IMU_head.KeepAliveInterval_sec" Type="1">140000</Property>
+    <Property LongName="MQTTReceiver_IMU_head.cleanSession" Type="0">true</Property>
+    <Property LongName="MQTTReceiver_IMU_head.ConnectTimeout_sec" Type="1">2</Property>
+    <Property LongName="MQTTReceiver_IMU_head.RetryInterval_sec" Type="1">1</Property>
+    <Property LongName="MQTTReceiver_IMU_head.verbose" Type="0">false</Property>
+    <Property LongName="MQTTReceiver_IMU_head.threaded" Type="0">true</Property>
+    <Property LongName="MQTTReceiver_IMU_head.priority" Type="1">128</Property>
+    <Property LongName="MQTTReceiver_IMU_head.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="Oscilloscope_Biopac_ECG_EDA" Model="Oscilloscope" Version="5.0.5" x="800" y="400" z="0">
+    <Input LongName="Oscilloscope_Biopac_ECG_EDA.inputA" Name="inputA">
+      <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputA.readerType" Type="1">0</Property>
+      <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputA.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Oscilloscope_Biopac_ECG_EDA.inputB" Name="inputB">
+      <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputB.readerType" Type="1">0</Property>
+      <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputB.subsampling" Type="1">1</Property>
+    </Input>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.begin_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="Oscilloscope_Biopac_ECG_EDA.widget_begin_config" Type="3" SubType="256"><![CDATA[General Configuration]]></ReadOnlyProperty>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.autoDirty" Type="0">true</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.run" Type="0">true</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.alwaysOnTop" Type="4"><![CDATA[4|0|Only at run time|Only at design time|No|Both at run time and design time]]></Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.moveable" Type="0">true</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.hidden" Type="0">false</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.title" Type="3"><![CDATA[]]></Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.x" Type="1">670</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.y" Type="1">78</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.width" Type="1">606</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.height" Type="1">423</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.end_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="Oscilloscope_Biopac_ECG_EDA.widget_end_config" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="Oscilloscope_Biopac_ECG_EDA.specific_begin_config" Type="3" SubType="256"><![CDATA[Specific Configuration]]></ReadOnlyProperty>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.nbInputs" Type="1">2</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.timeScale" Type="2">1</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.timeOffset" Type="2">0</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.scroll" Type="0">true</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.showCommonPanel" Type="0">false</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.showChannelPanel" Type="0">true</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.triggerChannel" Type="4"><![CDATA[2|0|A|B]]></Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.triggerLevel" Type="2">0.824432373</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.triggerSlope" Type="4"><![CDATA[3|1|any|positive|negative]]></Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.memory" Type="1">500000</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.pensWidth" Type="1">1</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.refreshPeriod" Type="1">40000</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputA_name" Type="3"><![CDATA[Channel A]]></Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputA_scale" Type="2">0.5502827962</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputA_offset" Type="2">-0.824432373</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputA_isSigned" Type="0">false</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputA_mode" Type="4"><![CDATA[3|0|Interpolated|Steps|Vertical bars]]></Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputA_color" Type="1" SubType="4">4227327</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputA_showScale" Type="0">false</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputB_name" Type="3"><![CDATA[Channel B]]></Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputB_scale" Type="2">0.217590332</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputB_offset" Type="2">-0.6591796875</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputB_isSigned" Type="0">false</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputB_mode" Type="4"><![CDATA[3|0|Interpolated|Steps|Vertical bars]]></Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputB_color" Type="1" SubType="4">16776960</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.inputB_showScale" Type="0">false</Property>
+    <ReadOnlyProperty LongName="Oscilloscope_Biopac_ECG_EDA.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.threaded" Type="0">true</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.priority" Type="1">128</Property>
+    <Property LongName="Oscilloscope_Biopac_ECG_EDA.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="Oscilloscope_SampleRates" Model="Oscilloscope" Version="5.0.5" x="800" y="96" z="0">
+    <Input LongName="Oscilloscope_SampleRates.inputA" Name="inputA">
+      <Property LongName="Oscilloscope_SampleRates.inputA.readerType" Type="1">0</Property>
+      <Property LongName="Oscilloscope_SampleRates.inputA.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Oscilloscope_SampleRates.inputB" Name="inputB">
+      <Property LongName="Oscilloscope_SampleRates.inputB.readerType" Type="1">0</Property>
+      <Property LongName="Oscilloscope_SampleRates.inputB.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Oscilloscope_SampleRates.inputC" Name="inputC">
+      <Property LongName="Oscilloscope_SampleRates.inputC.readerType" Type="1">0</Property>
+      <Property LongName="Oscilloscope_SampleRates.inputC.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Oscilloscope_SampleRates.inputD" Name="inputD">
+      <Property LongName="Oscilloscope_SampleRates.inputD.readerType" Type="1">0</Property>
+      <Property LongName="Oscilloscope_SampleRates.inputD.subsampling" Type="1">1</Property>
+    </Input>
+    <Property LongName="Oscilloscope_SampleRates.begin_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="Oscilloscope_SampleRates.widget_begin_config" Type="3" SubType="256"><![CDATA[General Configuration]]></ReadOnlyProperty>
+    <Property LongName="Oscilloscope_SampleRates.autoDirty" Type="0">true</Property>
+    <Property LongName="Oscilloscope_SampleRates.run" Type="0">true</Property>
+    <Property LongName="Oscilloscope_SampleRates.alwaysOnTop" Type="4"><![CDATA[4|2|Only at run time|Only at design time|No|Both at run time and design time]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.moveable" Type="0">true</Property>
+    <Property LongName="Oscilloscope_SampleRates.hidden" Type="0">true</Property>
+    <Property LongName="Oscilloscope_SampleRates.title" Type="3"><![CDATA[]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.x" Type="1">197</Property>
+    <Property LongName="Oscilloscope_SampleRates.y" Type="1">24</Property>
+    <Property LongName="Oscilloscope_SampleRates.width" Type="1">887</Property>
+    <Property LongName="Oscilloscope_SampleRates.height" Type="1">804</Property>
+    <Property LongName="Oscilloscope_SampleRates.end_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="Oscilloscope_SampleRates.widget_end_config" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="Oscilloscope_SampleRates.specific_begin_config" Type="3" SubType="256"><![CDATA[Specific Configuration]]></ReadOnlyProperty>
+    <Property LongName="Oscilloscope_SampleRates.nbInputs" Type="1">4</Property>
+    <Property LongName="Oscilloscope_SampleRates.timeScale" Type="2">10</Property>
+    <Property LongName="Oscilloscope_SampleRates.timeOffset" Type="2">0</Property>
+    <Property LongName="Oscilloscope_SampleRates.scroll" Type="0">true</Property>
+    <Property LongName="Oscilloscope_SampleRates.showCommonPanel" Type="0">true</Property>
+    <Property LongName="Oscilloscope_SampleRates.showChannelPanel" Type="0">true</Property>
+    <Property LongName="Oscilloscope_SampleRates.triggerChannel" Type="4"><![CDATA[4|0|A|B|C|D]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.triggerLevel" Type="2">33.5</Property>
+    <Property LongName="Oscilloscope_SampleRates.triggerSlope" Type="4"><![CDATA[3|1|any|positive|negative]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.memory" Type="1">500000</Property>
+    <Property LongName="Oscilloscope_SampleRates.pensWidth" Type="1">1</Property>
+    <Property LongName="Oscilloscope_SampleRates.refreshPeriod" Type="1">40000</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputA_name" Type="3"><![CDATA[Channel A IMU_head]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.inputA_scale" Type="2">20</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputA_offset" Type="2">-59.1</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputA_isSigned" Type="0">false</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputA_mode" Type="4"><![CDATA[3|0|Interpolated|Steps|Vertical bars]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.inputA_color" Type="1" SubType="4">4227327</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputA_showScale" Type="0">false</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputB_name" Type="3"><![CDATA[Channel B Clicker]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.inputB_scale" Type="2">2</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputB_offset" Type="2">-5.82</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputB_isSigned" Type="0">false</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputB_mode" Type="4"><![CDATA[3|0|Interpolated|Steps|Vertical bars]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.inputB_color" Type="1" SubType="4">16776960</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputB_showScale" Type="0">false</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputC_name" Type="3"><![CDATA[Channel C]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.inputC_scale" Type="2">1</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputC_offset" Type="2">-98</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputC_isSigned" Type="0">false</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputC_mode" Type="4"><![CDATA[3|0|Interpolated|Steps|Vertical bars]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.inputC_color" Type="1" SubType="4">65535</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputC_showScale" Type="0">false</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputD_name" Type="3"><![CDATA[Channel D]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.inputD_scale" Type="2">1</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputD_offset" Type="2">-98</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputD_isSigned" Type="0">false</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputD_mode" Type="4"><![CDATA[3|0|Interpolated|Steps|Vertical bars]]></Property>
+    <Property LongName="Oscilloscope_SampleRates.inputD_color" Type="1" SubType="4">255</Property>
+    <Property LongName="Oscilloscope_SampleRates.inputD_showScale" Type="0">false</Property>
+    <ReadOnlyProperty LongName="Oscilloscope_SampleRates.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="Oscilloscope_SampleRates.threaded" Type="0">true</Property>
+    <Property LongName="Oscilloscope_SampleRates.priority" Type="1">128</Property>
+    <Property LongName="Oscilloscope_SampleRates.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="RecFile_Biopac" Model="RecFile" Version="2.16.0" x="1104" y="400" z="0">
+    <Input LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.input" Name="input">
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.priority" Type="1">128</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Input LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.input" Name="input">
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.priority" Type="1">128</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Property LongName="RecFile_Biopac.path" Type="3" SubType="32"><![CDATA[C:/Users/ML/Documents/]]></Property>
+    <ReadOnlyProperty LongName="RecFile_Biopac.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <Property LongName="RecFile_Biopac.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+    <Property LongName="RecFile_Biopac.comments" Type="3"><![CDATA[]]></Property>
+    <Property LongName="RecFile_Biopac.blackbox" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_Biopac.record_buffer_delay" Type="1">1000000</Property>
+    <Property LongName="RecFile_Biopac.delay" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_Biopac.createFolder" Type="0">true</Property>
+    <Property LongName="RecFile_Biopac.record_to_subfolders" Type="0">false</Property>
+    <Property LongName="RecFile_Biopac.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
+    <Property LongName="RecFile_Biopac.allow_record_overwrite" Type="0">false</Property>
+    <ReadOnlyProperty LongName="RecFile_Biopac.record_start_time" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_Biopac.triggered_record_methods" Type="3"><![CDATA[Biopac_deinterleaver_1.ECG Biopac_deinterleaver_1.EDA]]></ReadOnlyProperty>
+    <Property LongName="RecFile_Biopac.threaded" Type="0">false</Property>
+    <Property LongName="RecFile_Biopac.priority" Type="1">128</Property>
+    <Property LongName="RecFile_Biopac.autoStart" Type="0">false</Property>
+  </Component>
+  <Component InstanceName="RecFile_Clicker" Model="RecFile" Version="2.16.0" x="1104" y="240" z="0">
+    <Input LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.input" Name="input">
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.priority" Type="1">128</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Property LongName="RecFile_Clicker.path" Type="3" SubType="32"><![CDATA[E:/Laurence_headmovement_imu/data test A2/]]></Property>
+    <ReadOnlyProperty LongName="RecFile_Clicker.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <Property LongName="RecFile_Clicker.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+    <Property LongName="RecFile_Clicker.comments" Type="3"><![CDATA[]]></Property>
+    <Property LongName="RecFile_Clicker.blackbox" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_Clicker.record_buffer_delay" Type="1">1000000</Property>
+    <Property LongName="RecFile_Clicker.delay" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_Clicker.createFolder" Type="0">true</Property>
+    <Property LongName="RecFile_Clicker.record_to_subfolders" Type="0">false</Property>
+    <Property LongName="RecFile_Clicker.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
+    <Property LongName="RecFile_Clicker.allow_record_overwrite" Type="0">false</Property>
+    <ReadOnlyProperty LongName="RecFile_Clicker.record_start_time" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_Clicker.triggered_record_methods" Type="3"><![CDATA[MQTTReceiver_Clicker.clickerdata_Text]]></ReadOnlyProperty>
+    <Property LongName="RecFile_Clicker.threaded" Type="0">false</Property>
+    <Property LongName="RecFile_Clicker.priority" Type="1">128</Property>
+    <Property LongName="RecFile_Clicker.autoStart" Type="0">false</Property>
+  </Component>
+  <Component InstanceName="RecFile_IMU_clicekr_biopac" Model="RecFile" Version="2.16.0" x="1424" y="216" z="0">
+    <Input LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.input" Name="input">
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.priority" Type="1">128</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Input LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.input" Name="input">
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.priority" Type="1">128</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Input LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.input" Name="input">
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.priority" Type="1">128</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Input LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.input" Name="input">
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.priority" Type="1">128</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Input LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.input" Name="input">
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.priority" Type="1">128</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Input LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.input" Name="input">
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.priority" Type="1">128</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Property LongName="RecFile_IMU_clicekr_biopac.path" Type="3" SubType="32"><![CDATA[D:/data/]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../../data]]></Relative></Property>
+    <ReadOnlyProperty LongName="RecFile_IMU_clicekr_biopac.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <Property LongName="RecFile_IMU_clicekr_biopac.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+    <Property LongName="RecFile_IMU_clicekr_biopac.comments" Type="3"><![CDATA[]]></Property>
+    <Property LongName="RecFile_IMU_clicekr_biopac.blackbox" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_IMU_clicekr_biopac.record_buffer_delay" Type="1">1000000</Property>
+    <Property LongName="RecFile_IMU_clicekr_biopac.delay" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_IMU_clicekr_biopac.createFolder" Type="0">true</Property>
+    <Property LongName="RecFile_IMU_clicekr_biopac.record_to_subfolders" Type="0">false</Property>
+    <Property LongName="RecFile_IMU_clicekr_biopac.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
+    <Property LongName="RecFile_IMU_clicekr_biopac.allow_record_overwrite" Type="0">false</Property>
+    <ReadOnlyProperty LongName="RecFile_IMU_clicekr_biopac.record_start_time" Type="3"><![CDATA[20240729_150516075000]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_IMU_clicekr_biopac.triggered_record_methods" Type="3"><![CDATA[MQTTReceiver_IMU_head.imudata_Text MQTTReceiver_Clicker.clickerdata_Text Biopac_deinterleaver_1.ECG Biopac_deinterleaver_1.EDA MQTTReceiver_IMU_head.connectionStatus MQTTReceiver_Clicker.connectionStatus]]></ReadOnlyProperty>
+    <Property LongName="RecFile_IMU_clicekr_biopac.threaded" Type="0">false</Property>
+    <Property LongName="RecFile_IMU_clicekr_biopac.priority" Type="1">128</Property>
+    <Property LongName="RecFile_IMU_clicekr_biopac.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="RecFile_WIT_IMU_head" Model="RecFile" Version="2.16.0" x="1104" y="96" z="0">
+    <Input LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.input" Name="input">
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.priority" Type="1">128</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Property LongName="RecFile_WIT_IMU_head.path" Type="3" SubType="32"><![CDATA[E:/Laurence_headmovement_imu/data test A2/]]></Property>
+    <ReadOnlyProperty LongName="RecFile_WIT_IMU_head.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <Property LongName="RecFile_WIT_IMU_head.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+    <Property LongName="RecFile_WIT_IMU_head.comments" Type="3"><![CDATA[]]></Property>
+    <Property LongName="RecFile_WIT_IMU_head.blackbox" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_WIT_IMU_head.record_buffer_delay" Type="1">1000000</Property>
+    <Property LongName="RecFile_WIT_IMU_head.delay" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_WIT_IMU_head.createFolder" Type="0">true</Property>
+    <Property LongName="RecFile_WIT_IMU_head.record_to_subfolders" Type="0">false</Property>
+    <Property LongName="RecFile_WIT_IMU_head.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
+    <Property LongName="RecFile_WIT_IMU_head.allow_record_overwrite" Type="0">false</Property>
+    <ReadOnlyProperty LongName="RecFile_WIT_IMU_head.record_start_time" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_WIT_IMU_head.triggered_record_methods" Type="3"><![CDATA[MQTTReceiver_IMU_head.imudata_Text]]></ReadOnlyProperty>
+    <Property LongName="RecFile_WIT_IMU_head.threaded" Type="0">false</Property>
+    <Property LongName="RecFile_WIT_IMU_head.priority" Type="1">128</Property>
+    <Property LongName="RecFile_WIT_IMU_head.autoStart" Type="0">false</Property>
+  </Component>
+  <Component InstanceName="RecFile_WIT_IMU_SampleRate_Bandwidth" Model="RecFile" Version="2.16.0" x="976" y="96" z="0">
+    <Input LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.input" Name="input">
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.priority" Type="1">128</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Input LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.input" Name="input">
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.priority" Type="1">128</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.path" Type="3" SubType="32"><![CDATA[E:/Laurence_headmovement_imu/data test A2/]]></Property>
+    <ReadOnlyProperty LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.comments" Type="3"><![CDATA[]]></Property>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.blackbox" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.record_buffer_delay" Type="1">1000000</Property>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.delay" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.createFolder" Type="0">true</Property>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.record_to_subfolders" Type="0">false</Property>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.allow_record_overwrite" Type="0">false</Property>
+    <ReadOnlyProperty LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.record_start_time" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.triggered_record_methods" Type="3"><![CDATA[SampleRate_IMU_head.sampleRateOutput SampleRate_IMU_head.bandwidthOutput]]></ReadOnlyProperty>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.threaded" Type="0">false</Property>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.priority" Type="1">128</Property>
+    <Property LongName="RecFile_WIT_IMU_SampleRate_Bandwidth.autoStart" Type="0">false</Property>
+  </Component>
+  <Component InstanceName="SampleRate_biopac_ECG" Model="SampleRate" Version="2.3.1" x="560" y="352" z="0">
+    <Input LongName="SampleRate_biopac_ECG.input" Name="input">
+      <Property LongName="SampleRate_biopac_ECG.input.readerType" Type="1">0</Property>
+      <Property LongName="SampleRate_biopac_ECG.input.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="SampleRate_biopac_ECG.sampleRateOutput" Name="sampleRateOutput">
+      <Property LongName="SampleRate_biopac_ECG.sampleRateOutput.subsampling" Type="1">1</Property>
+      <Property LongName="SampleRate_biopac_ECG.sampleRateOutput.fifosize" Type="1">16</Property>
+      <Property LongName="SampleRate_biopac_ECG.sampleRateOutput.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="SampleRate_biopac_ECG.bandwidthOutput" Name="bandwidthOutput">
+      <Property LongName="SampleRate_biopac_ECG.bandwidthOutput.subsampling" Type="1">1</Property>
+      <Property LongName="SampleRate_biopac_ECG.bandwidthOutput.fifosize" Type="1">16</Property>
+      <Property LongName="SampleRate_biopac_ECG.bandwidthOutput.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="SampleRate_biopac_ECG.verboseSampleRate" Type="0">true</Property>
+    <Property LongName="SampleRate_biopac_ECG.outputSampleRate" Type="0">true</Property>
+    <Property LongName="SampleRate_biopac_ECG.verboseWarnings" Type="0">false</Property>
+    <Property LongName="SampleRate_biopac_ECG.outputWarnings" Type="0">false</Property>
+    <Property LongName="SampleRate_biopac_ECG.expectedSampleRate" Type="1">200</Property>
+    <Property LongName="SampleRate_biopac_ECG.expectedSampleRateTolerance" Type="1">5</Property>
+    <ReadOnlyProperty LongName="SampleRate_biopac_ECG.sampleRate" Type="1">95</ReadOnlyProperty>
+    <Property LongName="SampleRate_biopac_ECG.threaded" Type="0">true</Property>
+    <Property LongName="SampleRate_biopac_ECG.priority" Type="1">128</Property>
+    <Property LongName="SampleRate_biopac_ECG.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="SampleRate_biopac_EDA" Model="SampleRate" Version="2.3.1" x="560" y="440" z="0">
+    <Input LongName="SampleRate_biopac_EDA.input" Name="input">
+      <Property LongName="SampleRate_biopac_EDA.input.readerType" Type="1">0</Property>
+      <Property LongName="SampleRate_biopac_EDA.input.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="SampleRate_biopac_EDA.sampleRateOutput" Name="sampleRateOutput">
+      <Property LongName="SampleRate_biopac_EDA.sampleRateOutput.subsampling" Type="1">1</Property>
+      <Property LongName="SampleRate_biopac_EDA.sampleRateOutput.fifosize" Type="1">16</Property>
+      <Property LongName="SampleRate_biopac_EDA.sampleRateOutput.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="SampleRate_biopac_EDA.bandwidthOutput" Name="bandwidthOutput">
+      <Property LongName="SampleRate_biopac_EDA.bandwidthOutput.subsampling" Type="1">1</Property>
+      <Property LongName="SampleRate_biopac_EDA.bandwidthOutput.fifosize" Type="1">16</Property>
+      <Property LongName="SampleRate_biopac_EDA.bandwidthOutput.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="SampleRate_biopac_EDA.verboseSampleRate" Type="0">true</Property>
+    <Property LongName="SampleRate_biopac_EDA.outputSampleRate" Type="0">true</Property>
+    <Property LongName="SampleRate_biopac_EDA.verboseWarnings" Type="0">false</Property>
+    <Property LongName="SampleRate_biopac_EDA.outputWarnings" Type="0">false</Property>
+    <Property LongName="SampleRate_biopac_EDA.expectedSampleRate" Type="1">200</Property>
+    <Property LongName="SampleRate_biopac_EDA.expectedSampleRateTolerance" Type="1">5</Property>
+    <ReadOnlyProperty LongName="SampleRate_biopac_EDA.sampleRate" Type="1">95</ReadOnlyProperty>
+    <Property LongName="SampleRate_biopac_EDA.threaded" Type="0">true</Property>
+    <Property LongName="SampleRate_biopac_EDA.priority" Type="1">128</Property>
+    <Property LongName="SampleRate_biopac_EDA.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="SampleRate_clicker" Model="SampleRate" Version="2.3.1" x="560" y="248" z="0">
+    <Input LongName="SampleRate_clicker.input" Name="input">
+      <Property LongName="SampleRate_clicker.input.readerType" Type="1">0</Property>
+      <Property LongName="SampleRate_clicker.input.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="SampleRate_clicker.sampleRateOutput" Name="sampleRateOutput">
+      <Property LongName="SampleRate_clicker.sampleRateOutput.subsampling" Type="1">1</Property>
+      <Property LongName="SampleRate_clicker.sampleRateOutput.fifosize" Type="1">16</Property>
+      <Property LongName="SampleRate_clicker.sampleRateOutput.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="SampleRate_clicker.bandwidthOutput" Name="bandwidthOutput">
+      <Property LongName="SampleRate_clicker.bandwidthOutput.subsampling" Type="1">1</Property>
+      <Property LongName="SampleRate_clicker.bandwidthOutput.fifosize" Type="1">16</Property>
+      <Property LongName="SampleRate_clicker.bandwidthOutput.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="SampleRate_clicker.verboseSampleRate" Type="0">true</Property>
+    <Property LongName="SampleRate_clicker.outputSampleRate" Type="0">true</Property>
+    <Property LongName="SampleRate_clicker.verboseWarnings" Type="0">false</Property>
+    <Property LongName="SampleRate_clicker.outputWarnings" Type="0">false</Property>
+    <Property LongName="SampleRate_clicker.expectedSampleRate" Type="1">200</Property>
+    <Property LongName="SampleRate_clicker.expectedSampleRateTolerance" Type="1">5</Property>
+    <ReadOnlyProperty LongName="SampleRate_clicker.sampleRate" Type="1">0</ReadOnlyProperty>
+    <Property LongName="SampleRate_clicker.threaded" Type="0">true</Property>
+    <Property LongName="SampleRate_clicker.priority" Type="1">128</Property>
+    <Property LongName="SampleRate_clicker.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="SampleRate_IMU_head" Model="SampleRate" Version="2.3.1" x="560" y="96" z="0">
+    <Input LongName="SampleRate_IMU_head.input" Name="input">
+      <Property LongName="SampleRate_IMU_head.input.readerType" Type="1">0</Property>
+      <Property LongName="SampleRate_IMU_head.input.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="SampleRate_IMU_head.sampleRateOutput" Name="sampleRateOutput">
+      <Property LongName="SampleRate_IMU_head.sampleRateOutput.subsampling" Type="1">1</Property>
+      <Property LongName="SampleRate_IMU_head.sampleRateOutput.fifosize" Type="1">16</Property>
+      <Property LongName="SampleRate_IMU_head.sampleRateOutput.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="SampleRate_IMU_head.bandwidthOutput" Name="bandwidthOutput">
+      <Property LongName="SampleRate_IMU_head.bandwidthOutput.subsampling" Type="1">1</Property>
+      <Property LongName="SampleRate_IMU_head.bandwidthOutput.fifosize" Type="1">16</Property>
+      <Property LongName="SampleRate_IMU_head.bandwidthOutput.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="SampleRate_IMU_head.verboseSampleRate" Type="0">true</Property>
+    <Property LongName="SampleRate_IMU_head.outputSampleRate" Type="0">true</Property>
+    <Property LongName="SampleRate_IMU_head.verboseWarnings" Type="0">false</Property>
+    <Property LongName="SampleRate_IMU_head.outputWarnings" Type="0">false</Property>
+    <Property LongName="SampleRate_IMU_head.expectedSampleRate" Type="1">200</Property>
+    <Property LongName="SampleRate_IMU_head.expectedSampleRateTolerance" Type="1">5</Property>
+    <ReadOnlyProperty LongName="SampleRate_IMU_head.sampleRate" Type="1">14</ReadOnlyProperty>
+    <Property LongName="SampleRate_IMU_head.threaded" Type="0">true</Property>
+    <Property LongName="SampleRate_IMU_head.priority" Type="1">128</Property>
+    <Property LongName="SampleRate_IMU_head.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="SerialReceiver_Biopac" Model="Biopac" Version="1.3.0" x="112" y="400" z="0">
+    <Output LongName="SerialReceiver_Biopac.interleavedData" Name="interleavedData">
+      <Property LongName="SerialReceiver_Biopac.interleavedData.subsampling" Type="1">1</Property>
+      <Property LongName="SerialReceiver_Biopac.interleavedData.fifosize" Type="1">16</Property>
+      <Property LongName="SerialReceiver_Biopac.interleavedData.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="SerialReceiver_Biopac.serial_number" Type="3"><![CDATA[auto]]></Property>
+    <Property LongName="SerialReceiver_Biopac.device_type" Type="4"><![CDATA[2|0|MP150|MP160]]></Property>
+    <Property LongName="SerialReceiver_Biopac.device_sample_rate" Type="4"><![CDATA[42|25|0.1|0.125|0.2|0.25|0.4|0.5|0.625|1|1.25|2|2.5|4|5|6.25|10|20|25|40|50|62.5|100|125|200|250|400|500|625|1000|1250|2000|2500|4000|5000|6250|10000|12500|20000|25000|40000|50000|100000|200000]]></Property>
+    <Property LongName="SerialReceiver_Biopac.component_output_rate" Type="2">100</Property>
+    <ReadOnlyProperty LongName="SerialReceiver_Biopac.samples_per_emission" Type="1">5</ReadOnlyProperty>
+    <Property LongName="SerialReceiver_Biopac.active_digital_channels" Type="3"><![CDATA[]]></Property>
+    <Property LongName="SerialReceiver_Biopac.active_analog_channels" Type="3"><![CDATA[14;16;]]></Property>
+    <ReadOnlyProperty LongName="SerialReceiver_Biopac.number_of_channels" Type="1">2</ReadOnlyProperty>
+    <Property LongName="SerialReceiver_Biopac.presets_file" Type="3" SubType="80"><![CDATA[]]></Property>
+    <Property LongName="SerialReceiver_Biopac.threaded" Type="0">true</Property>
+    <Property LongName="SerialReceiver_Biopac.priority" Type="1">128</Property>
+    <Property LongName="SerialReceiver_Biopac.autoStart" Type="0">true</Property>
+  </Component>
+  <Connection Output="SerialReceiver_Biopac.interleavedData" Input="Biopac_deinterleaver_1.interleavedData"/>
+  <Connection Output="MQTTReceiver_IMU_head.imudata_Text" Input="DataViewer_imu_clicker.input_0"/>
+  <Connection Output="MQTTReceiver_Clicker.clickerdata_Text" Input="DataViewer_imu_clicker.input_1"/>
+  <Connection Output="Biopac_deinterleaver_1.ECG" Input="Oscilloscope_Biopac_ECG_EDA.inputA"/>
+  <Connection Output="Biopac_deinterleaver_1.EDA" Input="Oscilloscope_Biopac_ECG_EDA.inputB"/>
+  <Connection Output="SampleRate_IMU_head.sampleRateOutput" Input="Oscilloscope_SampleRates.inputA"/>
+  <Connection Output="SampleRate_clicker.sampleRateOutput" Input="Oscilloscope_SampleRates.inputB"/>
+  <Connection Output="SampleRate_biopac_ECG.sampleRateOutput" Input="Oscilloscope_SampleRates.inputC"/>
+  <Connection Output="SampleRate_biopac_EDA.sampleRateOutput" Input="Oscilloscope_SampleRates.inputD"/>
+  <Connection Output="Biopac_deinterleaver_1.ECG" Input="SampleRate_biopac_ECG.input"/>
+  <Connection Output="Biopac_deinterleaver_1.EDA" Input="SampleRate_biopac_EDA.input"/>
+  <Connection Output="MQTTReceiver_Clicker.clickerdata_Text" Input="SampleRate_clicker.input"/>
+  <Connection Output="MQTTReceiver_IMU_head.imudata_Text" Input="SampleRate_IMU_head.input"/>
+  <Connection Input="RecFile_Biopac.Biopac_deinterleaver_1.ECG.input" Output="Biopac_deinterleaver_1.ECG">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_Biopac.Biopac_deinterleaver_1.EDA.input" Output="Biopac_deinterleaver_1.EDA">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.input" Output="MQTTReceiver_Clicker.clickerdata_Text">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.input" Output="MQTTReceiver_IMU_head.imudata_Text">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.input" Output="MQTTReceiver_Clicker.clickerdata_Text">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.input" Output="Biopac_deinterleaver_1.ECG">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.input" Output="Biopac_deinterleaver_1.EDA">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.input" Output="MQTTReceiver_IMU_head.connectionStatus">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.input" Output="MQTTReceiver_Clicker.connectionStatus">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.input" Output="MQTTReceiver_IMU_head.imudata_Text">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.input" Output="SampleRate_IMU_head.sampleRateOutput">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.input" Output="SampleRate_IMU_head.bandwidthOutput">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <RTBoardView ID="JavaStudio1.0">
+    <ComponentBox InstanceName="DataViewer_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="MQTTReceiver_1_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="MQTTReceiver_Clicker" reversed="false">
+      <Description><![CDATA[(Optional)
+The MQTT Service for receiver from R500 LASER PRESENTATION REMOTE (Bluettoth USB) capturing the keyboard events (dafault Left and Right)]]></Description>
+    </ComponentBox>
+    <ComponentBox InstanceName="MQTTReceiver_IMU_head" reversed="false">
+      <Description><![CDATA[The MQTT Service for receiver from Bluetooth IMU of WITT901CL]]></Description>
+    </ComponentBox>
+    <ComponentBox InstanceName="RecFile_1_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="RecFile_WIT_IMU_head_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="RecFile_WIT_IMU_test_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="RecFile_WIT_IMU_test_2" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="RecFile_WIT_IMU_test_A2_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="SampleRate_1_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="SampleRate_biopac" reversed="false">
+      <Description><![CDATA[default disable]]></Description>
+    </ComponentBox>
+    <ComponentBox InstanceName="SampleRate_biopac_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="SampleRate_clicker_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="SerialReceiver_Biopac" reversed="false">
+      <Description><![CDATA[The Serial Service for receiverfor Biopac MP150 to collect physiological data. (Min required 500Hz, ECG & EDA)]]></Description>
+    </ComponentBox>
+    <CommentBox x="65" y="48" z="-1" w="162" h="470" align="1" bgcolor="ffff80" fgcolor="400040">Receivers</CommentBox>
+    <CommentBox x="519" y="48" z="-1" w="388" h="464" align="1" bgcolor="ff80c0" fgcolor="0">Realtime Monitors &amp; Debuggers (Optional)</CommentBox>
+    <CommentBox x="281" y="48" z="-1" w="188" h="465" align="1" bgcolor="80ff80" fgcolor="0">Decoders</CommentBox>
+    <CommentBox x="946" y="48" z="-1" w="565" h="458" align="1" bgcolor="d2d2d2" fgcolor="0">Recorders (Default Disabled)</CommentBox>
+    <CommentBox x="-136" y="48" z="-1" w="173" h="323" align="1" bgcolor="d2d2d2" fgcolor="0">Servers</CommentBox>
+    <CommentBox x="-118" y="82" z="-1" w="139" h="52" align="2" bgcolor="ffffff" fgcolor="400040">[mosquitto]&#13;
+Occupied port: 1883</CommentBox>
+    <CommentBox x="-319" y="80" z="-1" w="139" h="59" align="2" bgcolor="ffffff" fgcolor="400040">[Bluetooth WIT-IMU]&#13;
+Occupied port: pluggedin-bluetooth</CommentBox>
+    <CommentBox x="-330" y="48" z="-2" w="167" h="288" align="1" bgcolor="d2d2d2" fgcolor="0">Sensors</CommentBox>
+    <CommentBox x="-118" y="146" z="-1" w="139" h="92" align="2" bgcolor="ffffff" fgcolor="400040">[IMU Connector]&#13;
+Occupied port: None&#13;
+Script Brief: bt2mqtt_publisher_imu_WITt901cl.py</CommentBox>
+    <CommentBox x="-319" y="152" z="-1" w="139" h="59" align="2" bgcolor="ffffff" fgcolor="400040">[Logitech R500 Clicker]&#13;
+Occupied port: pluggedin-bluetooth</CommentBox>
+    <CommentBox x="-319" y="225" z="-1" w="139" h="59" align="2" bgcolor="ffffff" fgcolor="400040">[Biopac System MP150]&#13;
+Occupied port: Ethernet cable port</CommentBox>
+    <CommentBox x="-118" y="252" z="-1" w="139" h="92" align="2" bgcolor="ffffff" fgcolor="400040">[Clicker Connector]&#13;
+Occupied port: None&#13;
+Script Brief: mark_logger.py</CommentBox>
+    <ConnectionShape InstanceName="Biopac_deinterleaver_1.interleavedData" color="0"/>
+    <ConnectionShape InstanceName="DataViewer_imu_clicker.input_0" color="0"/>
+    <ConnectionShape InstanceName="DataViewer_imu_clicker.input_1" color="0"/>
+    <ConnectionShape InstanceName="Oscilloscope_Biopac_ECG_EDA.inputA" color="0"/>
+    <ConnectionShape InstanceName="Oscilloscope_Biopac_ECG_EDA.inputB" color="0"/>
+    <ConnectionShape InstanceName="Oscilloscope_SampleRates.inputA" color="0"/>
+    <ConnectionShape InstanceName="Oscilloscope_SampleRates.inputB" color="0"/>
+    <ConnectionShape InstanceName="Oscilloscope_SampleRates.inputC" color="0"/>
+    <ConnectionShape InstanceName="Oscilloscope_SampleRates.inputD" color="0"/>
+    <ConnectionShape InstanceName="RecFile_1.Biopac_deinterleaver_1.ECG.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_1.Biopac_deinterleaver_1.EDA.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_1.MQTTReceiver_1.imudata_Text.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_1.SocketReceiver_1.output0.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_2.Biopac_deinterleaver_1.ECG.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_3.Biopac_deinterleaver_1.ECG.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_Biopac.Biopac_deinterleaver_1.ECG.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_Biopac.Biopac_deinterleaver_1.EDA.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_Clicker.MQTTReceiver_Clicker.clickerdata_Text.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.ECG.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_IMU_clicekr_biopac.Biopac_deinterleaver_1.EDA.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.clickerdata_Text.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_IMU_clicekr_biopac.MQTTReceiver_Clicker.connectionStatus.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.connectionStatus.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_IMU_clicekr_biopac.MQTTReceiver_IMU_head.imudata_Text.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_head.MQTTReceiver_IMU_head.imudata_Text.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test.MQTTReceiver_1.imudata_Text.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test.UDPSocket_WIT_IMU.output.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_1.SampleRate_1.sampleRateOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_2.SampleRate_1.bandwidthOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A1.MQTTReceiver_1.imudata_Text.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A1_SampleRate_Bandwidth.SampleRate_1.bandwidthOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A1_SampleRate_Bandwidth.SampleRate_1.sampleRateOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A2.MQTTReceiver_IMU_head.imudata_Text.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A2_1.SampleRate_1.sampleRateOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A2_SampleRate.SampleRate_1.bandwidthOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A2_SampleRate_Bandwidth.SampleRate_IMU_head.bandwidthOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A2_SampleRate_Bandwidth.SampleRate_IMU_head.sampleRateOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A3.UDPSocket_WIT_IMU.output.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A3_SampleRate.SampleRate_1.bandwidthOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A3_SampleRate.SampleRate_1.sampleRateOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A4_Bandwith.SampleRate_1.bandwidthOutput.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_WIT_IMU_test_A4_SampleRate.SampleRate_1.sampleRateOutput.input" color="0"/>
+    <ConnectionShape InstanceName="SampleRate_biopac_ECG.input" color="0"/>
+    <ConnectionShape InstanceName="SampleRate_biopac_EDA.input" color="0"/>
+    <ConnectionShape InstanceName="SampleRate_clicker.input" color="0"/>
+    <ConnectionShape InstanceName="SampleRate_IMU_head.input" color="0"/>
+  </RTBoardView>
+</RTMapsDiagram>

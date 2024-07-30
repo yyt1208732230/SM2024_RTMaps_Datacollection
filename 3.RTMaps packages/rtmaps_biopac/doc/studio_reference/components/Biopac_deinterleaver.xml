@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ComponentResources xmlns="http://schemas.intempora.com/RTMaps/2011/ComponentResources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="" xsi:noNamespaceSchemaLocation="http://www.intempora.com/schemas/RTMaps/2011/ComponentResources.xsd">
+<Type>Component</Type>
+<IconFile/>
+<Lang lang="ENG">
+<GroupName/>
+<Documentation>
+<Component>
+<Alias>Biopac deinterleaver</Alias>
+<Description>
+<span><![CDATA[<p>This component deinterleaves data acquired by the "Biopac MP150/MP160" component. It should be connected to a Biopac MP150/MP160 component or a Player component replaying data recorded from the Biopac MP150/MP160 component. </p>
+
+
+
+<p>
+
+Data is sent to separated outputs for each channel acquired. If the Biopac MP150/MP160 component emitted multiple samples for every channel at every output emission, the deinterleaver will do the same.
+
+</p>
+
+<p>
+The "Number of channels" property must be configured. Please see below.
+
+</p>]]></span>
+</Description>
+</Component>
+<Property MAPSName="number_of_channels">
+<Alias>Number of channels</Alias>
+<Description>
+<span><![CDATA[<p>Specify the number of outputs to be created (limited to 32: number of channels of the MP150/MP160). It must match the number of channels the input data contains (reported by the MP150/MP160 component's "Number of channels" property), else data can't be properly deinterleaved. 
+
+
+
+</p>
+
+
+
+<p>
+
+
+
+Once validated, outputs will be created as well as new properties where you can optionnally change the name of the outputs.
+
+
+
+</p>]]></span>
+</Description>
+</Property>
+<Property MAPSName="output_0_name">
+<Alias>output_0_name</Alias>
+<Description/>
+</Property>
+<Property MAPSName="output_1_name">
+<Alias>output_1_name</Alias>
+<Description/>
+</Property>
+<Property MAPSName="output_2_name">
+<Alias>output_2_name</Alias>
+<Description/>
+</Property>
+<Property MAPSName="output_3_name">
+<Alias>output_3_name</Alias>
+<Description/>
+</Property>
+<Property MAPSName="output_4_name">
+<Alias>output_4_name</Alias>
+<Description/>
+</Property>
+<Output MAPSName="a">
+<Alias>a</Alias>
+<Description/>
+</Output>
+<Output MAPSName="output_1">
+<Alias>output_1</Alias>
+<Description/>
+</Output>
+<Output MAPSName="dsg">
+<Alias>dsg</Alias>
+<Description/>
+</Output>
+<Output MAPSName="output_3">
+<Alias>output_3</Alias>
+<Description/>
+</Output>
+<Output MAPSName="aer">
+<Alias>aer</Alias>
+<Description/>
+</Output>
+<Input MAPSName="interleavedData">
+<Alias>interleavedData</Alias>
+<Description/>
+</Input>
+</Documentation>
+</Lang>
+</ComponentResources>

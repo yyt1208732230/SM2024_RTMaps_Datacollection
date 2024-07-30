@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RTMapsDiagram version="4.8.0" EngineVersion="4.9" xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd">
+  <RequiredPackages>
+    <File Version="1.3.1"><![CDATA[C:/Program Files/Intempora/RTMaps 4/packages/rtmaps_biopac/rtmaps_biopac.pck]]><Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_biopac/rtmaps_biopac.pck]]></Relative></File>
+  </RequiredPackages>
+  <EngineProperties>
+    <Property LongName="Engine.startTimespeed" Type="1">1000</Property>
+    <Property LongName="Engine.startTime" Type="1">0</Property>
+    <Property LongName="Engine.session" Type="3"><![CDATA[unspecified]]></Property>
+    <Property LongName="Engine.recordingAtStart" Type="0">true</Property>
+    <Property LongName="Engine.recording" Type="0">true</Property>
+    <Property LongName="Engine.sequentialStart" Type="0">false</Property>
+    <Property LongName="Engine.shutdownTimeout" Type="1">10000000</Property>
+    <Property LongName="Engine.autoDetectStartTime" Type="0">true</Property>
+    <Property LongName="Engine.coreFunctionsToSaveInDiag" Type="4"><![CDATA[0|-1]]></Property>
+    <Property LongName="Engine.useUTCTimeReference" Type="0">false</Property>
+    <Property LongName="Engine.fastForwardThreshold" Type="1">2000</Property>
+    <Property LongName="Engine.fastRewindThreshold" Type="1">-2000</Property>
+    <Property LongName="Engine.priorityClass" Type="4"><![CDATA[3|0|Shared Time|Preemptive|Auto]]></Property>
+    <Property LongName="Engine.posixTimerThread" Type="4"><![CDATA[3|0|Auto|Timer Interval|Real Time Clock]]></Property>
+    <Property LongName="Engine.posixRealTimeClockIrqFrequency" Type="4"><![CDATA[4|0|1024|2048|4096|8192]]></Property>
+    <Property LongName="Engine.posixPreemptiveSchedulingPolicy" Type="4"><![CDATA[2|0|FIFO|Round Robin]]></Property>
+    <Property LongName="Engine.windowsUsePerformanceCounter" Type="0">true</Property>
+  </EngineProperties>
+  <ClocksManagement>
+    <Property LongName="ClocksManagement.activeClock" Type="4"><![CDATA[1|0|RTMaps_standard_clock]]></Property>
+  </ClocksManagement>
+  <Component InstanceName="Biopac_1" Model="Biopac" Version="1.3.0" x="272" y="176" z="0">
+    <Output LongName="Biopac_1.interleavedData" Name="interleavedData">
+      <Property LongName="Biopac_1.interleavedData.subsampling" Type="1">1</Property>
+      <Property LongName="Biopac_1.interleavedData.fifosize" Type="1">16</Property>
+      <Property LongName="Biopac_1.interleavedData.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="Biopac_1.serial_number" Type="3"><![CDATA[auto]]></Property>
+    <Property LongName="Biopac_1.device_type" Type="4"><![CDATA[2|0|MP150|MP160]]></Property>
+    <Property LongName="Biopac_1.device_sample_rate" Type="4"><![CDATA[42|25|0.1|0.125|0.2|0.25|0.4|0.5|0.625|1|1.25|2|2.5|4|5|6.25|10|20|25|40|50|62.5|100|125|200|250|400|500|625|1000|1250|2000|2500|4000|5000|6250|10000|12500|20000|25000|40000|50000|100000|200000]]></Property>
+    <Property LongName="Biopac_1.component_output_rate" Type="2">100</Property>
+    <ReadOnlyProperty LongName="Biopac_1.samples_per_emission" Type="1">5</ReadOnlyProperty>
+    <Property LongName="Biopac_1.active_digital_channels" Type="3"><![CDATA[]]></Property>
+    <Property LongName="Biopac_1.active_analog_channels" Type="3"><![CDATA[14;16;]]></Property>
+    <ReadOnlyProperty LongName="Biopac_1.number_of_channels" Type="1">2</ReadOnlyProperty>
+    <Property LongName="Biopac_1.presets_file" Type="3" SubType="80"><![CDATA[]]></Property>
+    <Property LongName="Biopac_1.threaded" Type="0">true</Property>
+    <Property LongName="Biopac_1.priority" Type="1">128</Property>
+    <Property LongName="Biopac_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="Biopac_deinterleaver_1" Model="Biopac_deinterleaver" Version="1.1.0" x="560" y="224" z="0">
+    <Input LongName="Biopac_deinterleaver_1.interleavedData" Name="interleavedData">
+      <Property LongName="Biopac_deinterleaver_1.interleavedData.readerType" Type="1">0</Property>
+      <Property LongName="Biopac_deinterleaver_1.interleavedData.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="Biopac_deinterleaver_1.ECG" Name="ECG">
+      <Property LongName="Biopac_deinterleaver_1.ECG.subsampling" Type="1">1</Property>
+      <Property LongName="Biopac_deinterleaver_1.ECG.fifosize" Type="1">16</Property>
+      <Property LongName="Biopac_deinterleaver_1.ECG.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Biopac_deinterleaver_1.EDA" Name="EDA">
+      <Property LongName="Biopac_deinterleaver_1.EDA.subsampling" Type="1">1</Property>
+      <Property LongName="Biopac_deinterleaver_1.EDA.fifosize" Type="1">16</Property>
+      <Property LongName="Biopac_deinterleaver_1.EDA.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="Biopac_deinterleaver_1.number_of_channels" Type="1">2</Property>
+    <Property LongName="Biopac_deinterleaver_1.output_0_name" Type="3"><![CDATA[ECG]]></Property>
+    <Property LongName="Biopac_deinterleaver_1.output_1_name" Type="3"><![CDATA[EDA]]></Property>
+    <Property LongName="Biopac_deinterleaver_1.threaded" Type="0">true</Property>
+    <Property LongName="Biopac_deinterleaver_1.priority" Type="1">128</Property>
+    <Property LongName="Biopac_deinterleaver_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="Oscilloscope_1" Model="Oscilloscope" Version="5.0.5" x="968" y="232" z="0">
+    <Input LongName="Oscilloscope_1.inputA" Name="inputA">
+      <Property LongName="Oscilloscope_1.inputA.readerType" Type="1">0</Property>
+      <Property LongName="Oscilloscope_1.inputA.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Oscilloscope_1.inputB" Name="inputB">
+      <Property LongName="Oscilloscope_1.inputB.readerType" Type="1">0</Property>
+      <Property LongName="Oscilloscope_1.inputB.subsampling" Type="1">1</Property>
+    </Input>
+    <Property LongName="Oscilloscope_1.begin_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="Oscilloscope_1.widget_begin_config" Type="3" SubType="256"><![CDATA[General Configuration]]></ReadOnlyProperty>
+    <Property LongName="Oscilloscope_1.autoDirty" Type="0">true</Property>
+    <Property LongName="Oscilloscope_1.run" Type="0">true</Property>
+    <Property LongName="Oscilloscope_1.alwaysOnTop" Type="4"><![CDATA[4|0|Only at run time|Only at design time|No|Both at run time and design time]]></Property>
+    <Property LongName="Oscilloscope_1.moveable" Type="0">true</Property>
+    <Property LongName="Oscilloscope_1.hidden" Type="0">false</Property>
+    <Property LongName="Oscilloscope_1.title" Type="3"><![CDATA[]]></Property>
+    <Property LongName="Oscilloscope_1.x" Type="1">98</Property>
+    <Property LongName="Oscilloscope_1.y" Type="1">50</Property>
+    <Property LongName="Oscilloscope_1.width" Type="1">1662</Property>
+    <Property LongName="Oscilloscope_1.height" Type="1">990</Property>
+    <Property LongName="Oscilloscope_1.end_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="Oscilloscope_1.widget_end_config" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="Oscilloscope_1.specific_begin_config" Type="3" SubType="256"><![CDATA[Specific Configuration]]></ReadOnlyProperty>
+    <Property LongName="Oscilloscope_1.nbInputs" Type="1">2</Property>
+    <Property LongName="Oscilloscope_1.timeScale" Type="2">2</Property>
+    <Property LongName="Oscilloscope_1.timeOffset" Type="2">0.125</Property>
+    <Property LongName="Oscilloscope_1.scroll" Type="0">true</Property>
+    <Property LongName="Oscilloscope_1.showCommonPanel" Type="0">true</Property>
+    <Property LongName="Oscilloscope_1.showChannelPanel" Type="0">true</Property>
+    <Property LongName="Oscilloscope_1.triggerChannel" Type="4"><![CDATA[2|0|A|B]]></Property>
+    <Property LongName="Oscilloscope_1.triggerLevel" Type="2">1.259155273</Property>
+    <Property LongName="Oscilloscope_1.triggerSlope" Type="4"><![CDATA[3|1|any|positive|negative]]></Property>
+    <Property LongName="Oscilloscope_1.memory" Type="1">500000</Property>
+    <Property LongName="Oscilloscope_1.pensWidth" Type="1">1</Property>
+    <Property LongName="Oscilloscope_1.refreshPeriod" Type="1">40000</Property>
+    <Property LongName="Oscilloscope_1.inputA_name" Type="3"><![CDATA[ECG]]></Property>
+    <Property LongName="Oscilloscope_1.inputA_scale" Type="2">2</Property>
+    <Property LongName="Oscilloscope_1.inputA_offset" Type="2">-1.259155273</Property>
+    <Property LongName="Oscilloscope_1.inputA_isSigned" Type="0">false</Property>
+    <Property LongName="Oscilloscope_1.inputA_mode" Type="4"><![CDATA[3|0|Interpolated|Steps|Vertical bars]]></Property>
+    <Property LongName="Oscilloscope_1.inputA_color" Type="1" SubType="4">4227327</Property>
+    <Property LongName="Oscilloscope_1.inputA_showScale" Type="0">true</Property>
+    <Property LongName="Oscilloscope_1.inputB_name" Type="3"><![CDATA[EDA]]></Property>
+    <Property LongName="Oscilloscope_1.inputB_scale" Type="2">0.5</Property>
+    <Property LongName="Oscilloscope_1.inputB_offset" Type="2">-1.628875732</Property>
+    <Property LongName="Oscilloscope_1.inputB_isSigned" Type="0">false</Property>
+    <Property LongName="Oscilloscope_1.inputB_mode" Type="4"><![CDATA[3|0|Interpolated|Steps|Vertical bars]]></Property>
+    <Property LongName="Oscilloscope_1.inputB_color" Type="1" SubType="4">16776960</Property>
+    <Property LongName="Oscilloscope_1.inputB_showScale" Type="0">true</Property>
+    <ReadOnlyProperty LongName="Oscilloscope_1.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="Oscilloscope_1.threaded" Type="0">true</Property>
+    <Property LongName="Oscilloscope_1.priority" Type="1">128</Property>
+    <Property LongName="Oscilloscope_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="RecFile_1" Model="RecFile" Version="2.16.0" x="760" y="424" z="0">
+    <Input LongName="RecFile_1.Biopac_deinterleaver_1.EDA.input" Name="input">
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.priority" Type="1">128</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.EDA.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Input LongName="RecFile_1.Biopac_deinterleaver_1.ECG.input" Name="input">
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.priority" Type="1">128</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_1.Biopac_deinterleaver_1.ECG.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Property LongName="RecFile_1.path" Type="3" SubType="32"><![CDATA[C:/Users/ML/Documents/]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../../Documents]]></Relative></Property>
+    <ReadOnlyProperty LongName="RecFile_1.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <Property LongName="RecFile_1.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+    <Property LongName="RecFile_1.comments" Type="3"><![CDATA[]]></Property>
+    <Property LongName="RecFile_1.blackbox" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_1.record_buffer_delay" Type="1">1000000</Property>
+    <Property LongName="RecFile_1.delay" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_1.createFolder" Type="0">true</Property>
+    <Property LongName="RecFile_1.record_to_subfolders" Type="0">false</Property>
+    <Property LongName="RecFile_1.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
+    <Property LongName="RecFile_1.allow_record_overwrite" Type="0">false</Property>
+    <ReadOnlyProperty LongName="RecFile_1.record_start_time" Type="3"><![CDATA[20240724_162222024000]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_1.triggered_record_methods" Type="3"><![CDATA[Biopac_deinterleaver_1.EDA Biopac_deinterleaver_1.ECG]]></ReadOnlyProperty>
+    <Property LongName="RecFile_1.threaded" Type="0">false</Property>
+    <Property LongName="RecFile_1.priority" Type="1">128</Property>
+    <Property LongName="RecFile_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="RecFile_2" Model="RecFile" Version="2.16.0" x="752" y="96" z="0">
+    <Input LongName="RecFile_2.Biopac_deinterleaver_1.ECG.input" Name="input">
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.priority" Type="1">128</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.timeOfIssue" Type="0">true</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.linefeed" Type="1">1</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.scilabFile" Type="0">false</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.initCommands" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.endCommands" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.shortFileName" Type="0">false</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.timeMilliseconds" Type="0">false</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.variable_vector_size" Type="0">false</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.row_padding_value" Type="2">0</Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.matrix_name" Type="4"><![CDATA[3|0|Recorder Input Name|Recorder Input Alias|Custom]]></Property>
+      <Property LongName="RecFile_2.Biopac_deinterleaver_1.ECG.custom_matrix_name" Type="3"><![CDATA[]]></Property>
+    </Input>
+    <Property LongName="RecFile_2.path" Type="3" SubType="32"><![CDATA[C:/Users/ML/Documents/]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../../Documents]]></Relative></Property>
+    <ReadOnlyProperty LongName="RecFile_2.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <Property LongName="RecFile_2.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+    <Property LongName="RecFile_2.comments" Type="3"><![CDATA[]]></Property>
+    <Property LongName="RecFile_2.blackbox" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_2.record_buffer_delay" Type="1">1000000</Property>
+    <Property LongName="RecFile_2.delay" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_2.createFolder" Type="0">true</Property>
+    <Property LongName="RecFile_2.record_to_subfolders" Type="0">false</Property>
+    <Property LongName="RecFile_2.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
+    <Property LongName="RecFile_2.allow_record_overwrite" Type="0">false</Property>
+    <ReadOnlyProperty LongName="RecFile_2.record_start_time" Type="3"><![CDATA[20240723_120749081000]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_2.triggered_record_methods" Type="3"><![CDATA[Biopac_deinterleaver_1.ECG]]></ReadOnlyProperty>
+    <Property LongName="RecFile_2.threaded" Type="0">false</Property>
+    <Property LongName="RecFile_2.priority" Type="1">128</Property>
+    <Property LongName="RecFile_2.autoStart" Type="0">false</Property>
+  </Component>
+  <Component InstanceName="RecFile_3" Model="RecFile" Version="2.16.0" x="752" y="0" z="0">
+    <Input LongName="RecFile_3.Biopac_deinterleaver_1.ECG.input" Name="input">
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.input.readerType" Type="1">0</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.input.subsampling" Type="1">1</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.trigger" Type="0">true</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.triggerBufferTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.triggerBufferSize" Type="1">0</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.triggerReleaseTime" Type="1" SubType="1">0</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.triggerReleaseSize" Type="1">0</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.alias" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.record_to_subfolder" Type="0">false</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.useTimestamp" Type="0">false</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.threaded" Type="0">true</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.priority" Type="1">128</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.timeOfIssue" Type="0">false</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.timeFormat" Type="4"><![CDATA[4|3|YYYY/MM/DD hh:mm:ss.etc UTC|YYYY/MM/DD hh:mm:ss.etc Local Time|hh:mm:ss.etc|no format]]></Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.append_utc_local_suffix" Type="0">true</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.separatorChar" Type="4"><![CDATA[4|0|;|,|Tab|.]]></Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.timestampingPrecision" Type="4"><![CDATA[2|1|Milliseconds|Microseconds]]></Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.depacketize" Type="0">false</Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.headerType" Type="4"><![CDATA[3|0|None|Manual|Auto (based on upstream graph)]]></Property>
+      <Property LongName="RecFile_3.Biopac_deinterleaver_1.ECG.manualHeader" Type="3"><![CDATA[Channel A; Channel B; Channel C;]]></Property>
+    </Input>
+    <Property LongName="RecFile_3.path" Type="3" SubType="32"><![CDATA[C:/Users/ML/Documents/]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../../Documents]]></Relative></Property>
+    <ReadOnlyProperty LongName="RecFile_3.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <Property LongName="RecFile_3.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
+    <Property LongName="RecFile_3.comments" Type="3"><![CDATA[]]></Property>
+    <Property LongName="RecFile_3.blackbox" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_3.record_buffer_delay" Type="1">1000000</Property>
+    <Property LongName="RecFile_3.delay" Type="1" SubType="128">0</Property>
+    <Property LongName="RecFile_3.createFolder" Type="0">true</Property>
+    <Property LongName="RecFile_3.record_to_subfolders" Type="0">false</Property>
+    <Property LongName="RecFile_3.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
+    <Property LongName="RecFile_3.allow_record_overwrite" Type="0">false</Property>
+    <ReadOnlyProperty LongName="RecFile_3.record_start_time" Type="3"><![CDATA[20240723_122723685000]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_3.triggered_record_methods" Type="3"><![CDATA[Biopac_deinterleaver_1.ECG]]></ReadOnlyProperty>
+    <Property LongName="RecFile_3.threaded" Type="0">false</Property>
+    <Property LongName="RecFile_3.priority" Type="1">128</Property>
+    <Property LongName="RecFile_3.autoStart" Type="0">false</Property>
+  </Component>
+  <Connection Output="Biopac_1.interleavedData" Input="Biopac_deinterleaver_1.interleavedData"/>
+  <Connection Output="Biopac_deinterleaver_1.ECG" Input="Oscilloscope_1.inputA"/>
+  <Connection Output="Biopac_deinterleaver_1.EDA" Input="Oscilloscope_1.inputB"/>
+  <Connection Input="RecFile_1.Biopac_deinterleaver_1.EDA.input" Output="Biopac_deinterleaver_1.EDA">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_1.Biopac_deinterleaver_1.ECG.input" Output="Biopac_deinterleaver_1.ECG">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_2.Biopac_deinterleaver_1.ECG.input" Output="Biopac_deinterleaver_1.ECG">
+    <Record Method="mfile" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <Connection Input="RecFile_3.Biopac_deinterleaver_1.ECG.input" Output="Biopac_deinterleaver_1.ECG">
+    <Record Method="tabbed_text" neverskipping="false" useTimestamp="false"/>
+  </Connection>
+  <RTBoardView ID="JavaStudio1.0">
+    <ConnectionShape InstanceName="Biopac_deinterleaver_1.interleavedData" color="0"/>
+    <ConnectionShape InstanceName="Oscilloscope_1.inputA" color="0"/>
+    <ConnectionShape InstanceName="Oscilloscope_1.inputB" color="0"/>
+    <ConnectionShape InstanceName="RecFile_1.Biopac_deinterleaver_1.ECG.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_1.Biopac_deinterleaver_1.EDA.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_2.Biopac_deinterleaver_1.ECG.input" color="0"/>
+    <ConnectionShape InstanceName="RecFile_3.Biopac_deinterleaver_1.ECG.input" color="0"/>
+  </RTBoardView>
+</RTMapsDiagram>
